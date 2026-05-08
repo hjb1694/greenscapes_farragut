@@ -1,0 +1,755 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+header {
+    background: #000;
+    padding: 2rem;
+}
+
+.header__container {
+    max-width: 120rem;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 120rem;
+    margin:0 auto;
+}
+
+.header__part--left {
+    display:flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    height: 10rem;
+}
+
+
+.nav {
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    color: #eee;
+    padding: .8rem;
+    cursor: pointer;
+    display:none;
+}
+
+.nav-close {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: .8rem;
+    cursor: pointer;
+    display:none;
+    position: absolute;
+    right:2rem;
+    top:4rem;
+}
+
+.menu-icon {
+    width: 4rem;
+}
+
+.close-icon {
+    width: 4rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a,
+.nav a:link,
+.nav a:visited {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+.hero {
+    min-height: 70vh;
+    background: #222;
+    padding: 2rem 0;
+}
+
+.our-services {
+    min-height: 40rem;
+    background: #595146;
+    border-top:1rem solid #000;
+    box-shadow: inset 0 0 6rem 2rem rgba(0,0,0,.24);
+    padding: 3rem 2rem;
+}
+
+.our-services h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    color: #bbb;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.service-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.service-tile {
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+    border: 3px solid #000;
+    position: relative;
+    box-shadow: 0 0 1rem rgba(0,0,0,.4);
+    transition: transform .5s;
+}
+
+.service-tile__text {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    z-index: 2;
+    background: rgba(0,0,0,.6);
+    font-size: 1.4rem;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+.service-tile img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    object-position: center;
+    transition: all .5s;
+}
+
+
+.service-tile:hover img {
+    transform: scale(1.02);
+    filter: grayscale(100%);
+}
+
+.footer {
+    min-height: 20rem;
+    background: #000;
+    padding: 3rem 2rem;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 120rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.footer__logo {
+    display: block;
+    height: 10rem;
+}
+
+.footer__legal {
+    color: #ccc;
+    text-align: center;
+}
+
+.footer__contact {
+    color: #ccc;
+}
+
+.footer__contact h3 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.footer__cr {
+    font-size: 1.4rem;
+    margin-bottom: .4rem;
+}
+
+.made-with {
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 1.4rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    font-weight: lighter;
+}
+
+
+@media (max-width: 830px) {
+
+    .footer__container {
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+    .footer__logo {
+        height: 8rem;
+    }
+
+    .footer__legal {
+        order: 2;
+    }
+
+    .footer__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    .contact-item {
+        margin:0;
+    }
+
+
+}
+
+
+@media (max-width: 800px) {
+    .header__part--right {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        top:0;
+        right:0;
+        width: 0;
+        height: 100vh;
+        z-index: 1000;
+        overflow: hidden;
+        transition: width .4s;
+    }
+
+
+    .header__part--right.show {
+        width: 100vw;
+    }
+
+    .header__part--right.show .nav-close {
+        display: block;
+        animation: fade-in .3s .2s both;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        row-gap: 2.6rem;
+    }
+
+    .nav a,
+    .nav a:link,
+    .nav a:visited {
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+
+    .service-tiles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 530px) {
+    .service-tiles {
+        grid-template-columns: auto;
+    }
+
+    .service-tile {
+        height: 27rem;
+    }
+
+    .service-tile img {
+        object-position: bottom;
+    }
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* =============== SLIDESHOW ================ */
+
+.slideshow {
+  width: 100vw;
+  max-width: 120rem;
+  margin: 0 auto;
+  height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0,0,0,.24);
+
+  &__items {
+    width:100vw;
+    max-width: 120rem;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  &__item, img {
+    width:100%;
+    max-width: 130rem;
+    height: 80vh;
+    overflow: hidden;
+    padding: 0 !important;
+  }
+
+  img {
+    object-fit: cover;
+    height: 80vh;
+    width: calc(100% + 10px);
+    transform: translateX(-15px);
+  }
+}
+
+.uk-slideshow {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.uk-slideshow-items {
+  /* 1 */
+  position: relative;
+  z-index: 0;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  -webkit-touch-callout: none;
+  /* 5 */
+  touch-action: pan-y;
+}
+
+.uk-slideshow-items > * {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 2 */
+  right: 0;
+  bottom: 0;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  will-change: transform, opacity;
+}
+
+
+.uk-slideshow-items > :not(.uk-active) {
+  display: none;
+}
+
+.uk-position-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.uk-position-top {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.uk-position-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.uk-position-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.uk-position-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.uk-position-relative {
+  position: relative  !important;
+}
+.uk-position-absolute {
+  position: absolute  !important;
+}
+/*
+ * Corners
+ */
+.uk-position-top-left {
+  top: 0;
+  left: 0;
+}
+.uk-position-top-right {
+  top: 0;
+  right: 0;
+}
+.uk-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.uk-position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.uk-animation-kenburns {
+  animation-name: uk-kenburns;
+  animation-duration: 15s;
+}
+
+.uk-animation-reverse {
+  animation-direction: reverse;
+  animation-timing-function: ease-in;
+}
+
+.uk-transform-origin-center-left {
+  transform-origin: 0 50%;
+}
+
+
+.uk-slider {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.uk-slider-container {
+  /* 1 */
+  overflow: hidden;
+  /* 2 */
+  overflow: clip;
+}
+
+.uk-slider-container-offset {
+  margin: -11px -25px -39px -25px;
+  padding: 11px 25px 39px 25px;
+}
+
+.uk-slider-items {
+  /* 1 */
+  will-change: transform;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  touch-action: pan-y;
+}
+/*
+ * 1. Reset list style without interfering with grid
+ * 2. Prevent displaying the callout information on iOS.
+ */
+.uk-slider-items:not(.uk-grid) {
+  display: flex;
+  /* 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 2 */
+  -webkit-touch-callout: none;
+}
+.uk-slider-items.uk-grid {
+  flex-wrap: nowrap;
+}
+
+.uk-position-small {
+  margin: 15px;
+  --uk-position-margin-offset: 15px;
+}
+
+[hidden],
+.uk-hidden,
+.uk-hidden-empty:empty {
+  display: none !important;
+}
+
+.uk-hidden-visually:not(:focus):not(:active):not(:focus-within),
+.uk-visible-toggle:not(:hover):not(:focus) .uk-hidden-hover:not(:focus-visible):not(:has(:focus-visible)),
+.uk-visible-toggle:not(:hover):not(:focus) .uk-hidden-hover:not(:focus-within) {
+  /* 1 */
+  position: absolute !important;
+  /* 2 */
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.uk-position-center-left {
+  left: 0;
+}
+.uk-position-center-right {
+  right: 0;
+}
+
+[class*="uk-position-center-left"],
+[class*="uk-position-center-right"],
+.uk-position-center-vertical {
+  top: calc(50% - var(--uk-position-margin-offset));
+  --uk-position-translate-y: -50%;
+  transform: translate(0, var(--uk-position-translate-y));
+}
+
+.uk-slidenav {
+  padding: 5px 10px;
+  color: rgba(102, 102, 102, 0.5);
+  transition: color 0.1s ease-in-out;
+}
+/* Hover */
+.uk-slidenav:hover {
+  color: rgba(102, 102, 102, 0.9);
+}
+/* OnClick */
+.uk-slidenav:active {
+  color: rgba(102, 102, 102, 0.5);
+}
+
+.uk-slidenav-large {
+  padding: 10px 10px;
+}
+/* Container
+ ========================================================================== */
+.uk-slidenav-container {
+  display: flex;
+}
+
+.uk-light,
+.uk-section-primary:not(.uk-preserve-color),
+.uk-section-secondary:not(.uk-preserve-color),
+.uk-tile-primary:not(.uk-preserve-color),
+.uk-tile-secondary:not(.uk-preserve-color),
+.uk-card-primary.uk-card-body,
+.uk-card-primary > :not([class*="uk-card-media"]),
+.uk-card-secondary.uk-card-body,
+.uk-card-secondary > :not([class*="uk-card-media"]),
+.uk-overlay-primary,
+.uk-offcanvas-bar {
+  color: rgba(255, 255, 255, 0.7);
+  /* Webkit */
+  /* Firefox */
+  /* Webkit */
+  /* Firefox */
+}
+.uk-light a,
+.uk-light .uk-link,
+.uk-section-primary:not(.uk-preserve-color) a,
+.uk-section-primary:not(.uk-preserve-color) .uk-link,
+.uk-section-secondary:not(.uk-preserve-color) a,
+.uk-section-secondary:not(.uk-preserve-color) .uk-link,
+.uk-tile-primary:not(.uk-preserve-color) a,
+.uk-tile-primary:not(.uk-preserve-color) .uk-link,
+.uk-tile-secondary:not(.uk-preserve-color) a,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-link,
+.uk-card-primary.uk-card-body a,
+.uk-card-primary.uk-card-body .uk-link,
+.uk-card-primary > :not([class*="uk-card-media"]) a,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-link,
+.uk-card-secondary.uk-card-body a,
+.uk-card-secondary.uk-card-body .uk-link,
+.uk-card-secondary > :not([class*="uk-card-media"]) a,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-link,
+.uk-overlay-primary a,
+.uk-overlay-primary .uk-link,
+.uk-offcanvas-bar a,
+.uk-offcanvas-bar .uk-link {
+  color: #fff;
+}
+.uk-light a:hover,
+.uk-light .uk-link:hover,
+.uk-light .uk-link-toggle:hover .uk-link,
+.uk-section-primary:not(.uk-preserve-color) a:hover,
+.uk-section-primary:not(.uk-preserve-color) .uk-link:hover,
+.uk-section-primary:not(.uk-preserve-color) .uk-link-toggle:hover .uk-link,
+.uk-section-secondary:not(.uk-preserve-color) a:hover,
+.uk-section-secondary:not(.uk-preserve-color) .uk-link:hover,
+.uk-section-secondary:not(.uk-preserve-color) .uk-link-toggle:hover .uk-link,
+.uk-tile-primary:not(.uk-preserve-color) a:hover,
+.uk-tile-primary:not(.uk-preserve-color) .uk-link:hover,
+.uk-tile-primary:not(.uk-preserve-color) .uk-link-toggle:hover .uk-link,
+.uk-tile-secondary:not(.uk-preserve-color) a:hover,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-link:hover,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-link-toggle:hover .uk-link,
+.uk-card-primary.uk-card-body a:hover,
+.uk-card-primary.uk-card-body .uk-link:hover,
+.uk-card-primary.uk-card-body .uk-link-toggle:hover .uk-link,
+.uk-card-primary > :not([class*="uk-card-media"]) a:hover,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-link:hover,
+.uk-card-primary > :not([class*="uk-card-media"]) .uk-link-toggle:hover .uk-link,
+.uk-card-secondary.uk-card-body a:hover,
+.uk-card-secondary.uk-card-body .uk-link:hover,
+.uk-card-secondary.uk-card-body .uk-link-toggle:hover .uk-link,
+.uk-card-secondary > :not([class*="uk-card-media"]) a:hover,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-link:hover,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-link-toggle:hover .uk-link,
+.uk-overlay-primary a:hover,
+.uk-overlay-primary .uk-link:hover,
+.uk-overlay-primary .uk-link-toggle:hover .uk-link,
+.uk-offcanvas-bar a:hover,
+.uk-offcanvas-bar .uk-link:hover,
+.uk-offcanvas-bar .uk-link-toggle:hover .uk-link {
+  color: #fff;
+}
+
+.uk-light :not(pre) > code,
+.uk-light :not(pre) > kbd,
+.uk-light :not(pre) > samp,
+.uk-section-primary:not(.uk-preserve-color) :not(pre) > code,
+.uk-section-primary:not(.uk-preserve-color) :not(pre) > kbd,
+.uk-section-primary:not(.uk-preserve-color) :not(pre) > samp,
+.uk-section-secondary:not(.uk-preserve-color) :not(pre) > code,
+.uk-section-secondary:not(.uk-preserve-color) :not(pre) > kbd,
+.uk-section-secondary:not(.uk-preserve-color) :not(pre) > samp,
+.uk-tile-primary:not(.uk-preserve-color) :not(pre) > code,
+.uk-tile-primary:not(.uk-preserve-color) :not(pre) > kbd,
+.uk-tile-primary:not(.uk-preserve-color) :not(pre) > samp,
+.uk-tile-secondary:not(.uk-preserve-color) :not(pre) > code,
+.uk-tile-secondary:not(.uk-preserve-color) :not(pre) > kbd,
+.uk-tile-secondary:not(.uk-preserve-color) :not(pre) > samp,
+.uk-card-primary.uk-card-body :not(pre) > code,
+.uk-card-primary.uk-card-body :not(pre) > kbd,
+.uk-card-primary.uk-card-body :not(pre) > samp,
+.uk-card-primary > :not([class*="uk-card-media"]) :not(pre) > code,
+.uk-card-primary > :not([class*="uk-card-media"]) :not(pre) > kbd,
+.uk-card-primary > :not([class*="uk-card-media"]) :not(pre) > samp,
+.uk-card-secondary.uk-card-body :not(pre) > code,
+.uk-card-secondary.uk-card-body :not(pre) > kbd,
+.uk-card-secondary.uk-card-body :not(pre) > samp,
+.uk-card-secondary > :not([class*="uk-card-media"]) :not(pre) > code,
+.uk-card-secondary > :not([class*="uk-card-media"]) :not(pre) > kbd,
+.uk-card-secondary > :not([class*="uk-card-media"]) :not(pre) > samp,
+.uk-overlay-primary :not(pre) > code,
+.uk-overlay-primary :not(pre) > kbd,
+.uk-overlay-primary :not(pre) > samp,
+.uk-offcanvas-bar :not(pre) > code,
+.uk-offcanvas-bar :not(pre) > kbd,
+.uk-offcanvas-bar :not(pre) > samp {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.uk-light em,
+.uk-section-primary:not(.uk-preserve-color) em,
+.uk-section-secondary:not(.uk-preserve-color) em,
+.uk-tile-primary:not(.uk-preserve-color) em,
+.uk-tile-secondary:not(.uk-preserve-color) em,
+.uk-card-primary.uk-card-body em,
+.uk-card-primary > :not([class*="uk-card-media"]) em,
+.uk-card-secondary.uk-card-body em,
+.uk-card-secondary > :not([class*="uk-card-media"]) em,
+.uk-overlay-primary em,
+.uk-offcanvas-bar em {
+  color: #fff;
+}
+
+@keyframes uk-kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width:800px) {
+
+    .hero {
+        height: 100%;
+        min-height: 55vh;
+        padding:0;
+    }
+
+    .slideshow {
+        height:55vh;
+        overflow: hidden;
+    }
+
+    .slideshow-img {
+        min-width: none;
+        height:55vh;
+    }
+
+    &__items {
+        width:100vw;
+        max-width: 120rem;
+        height: 55vh;
+        overflow: hidden;
+    }
+
+    &__item, img {
+        width:100%;
+        max-width: 130rem;
+        height: 55vh;
+        overflow: hidden;
+        padding: 0 !important;
+    }
+
+}

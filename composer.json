@@ -1,0 +1,17 @@
+{
+    "name": "hayden-bradfield/greenscapes",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Hayden Bradfield",
+            "email": "me@haydenbradfield.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.7",
+        "slim/php-view": "^3.4",
+        "vlucas/phpdotenv": "^5.6",
+        "slim/twig-view": "^3.4"
+    }
+}

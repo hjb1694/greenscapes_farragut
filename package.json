@@ -1,0 +1,28 @@
+{
+  "name": "greenscapes-farragut-website",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A website for a local landscaping biz",
+  "keywords": [
+    "wesbite",
+    "project"
+  ],
+  "homepage": "https://github.com/hjb1694/greenscapes_starter#readme",
+  "bugs": {
+    "url": "https://github.com/hjb1694/greenscapes_starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjb1694/greenscapes_starter.git"
+  },
+  "license": "ISC",
+  "author": "Hayden Bradfield",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "sass:build": "sass --style=compressed ./src/scss/main.scss ./public/css/style.build.css"
+  },
+  "devDependencies": {
+    "sass": "^1.99.0"
+  }
+}
