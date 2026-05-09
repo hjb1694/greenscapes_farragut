@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock head %}
+</head>
+<body>
+    {% include './partials/header.partial.twig' %}
+    <main>
+        {% block body %}
+        <section class="hero">
+            <div class="slideshow uk-position-relative uk-visible-toggle uk-light" uk-slideshow="autoplay:true;animation:fade;max-height:725;ratio:16:9">
+                <div class="slideshow__items uk-slideshow-items" uk-height-viewport="min:300">
+                    <div class="slideshow__item uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                        <img class="slideshow-img" src="/public/img/landscape.jpeg" alt="Landscape" uk-cover>
+                    </div>
+                    <div class="slideshow__item uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                        <img class="slideshow-img" src="/public/img/gazebo.png" alt="Gazebo" uk-cover>
+                    </div>
+                    <div class="slideshow__item uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                        <img class="slideshow-img" src="/public/img/fence2.jpeg" alt="Fencd" uk-cover>
+                    </div>
+                </div>
+                <a class="uk-position-absolute uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a class="uk-position-absolute uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slideshow-item="next"></a>
+            </div>
+        </section>
+        <section class="our-services">
+            <h2 class="our-services__heading-text">Our Services</h2>
+            <div class="container">
+                <div class="our-services__service-tiles">
+                    <div class="service-tile">
+                        <img class="service-tile__img" src="/public/img/retaining_walls.png" alt="retaining wall"/>
+                        <div class="service-tile__text">Retaining Walls</div>
+                    </div>
+                    <div class="service-tile">
+                        <img class="service-tile__img" src="/public/img/flagstone_walkways.png" alt="Flagstone Walkways"/>
+                        <div class="service-tile__text">Flagstone Walkways</div>
+                    </div>
+                    <div class="service-tile">
+                        <img class="service-tile__img" src="public/img/ponds.png" alt="retaining wall"/>
+                        <div class="service-tile__text">Ponds</div>
+                    </div>
+                    <div class="service-tile">
+                        <img class="service-tile__img" src="public/img/outdoor_lighting.jpg" alt="outdoor lighting"/>
+                        <div class="service-tile__text">Outdoor Lighting</div>
+                    </div>
+                    <div class="service-tile">
+                        <img class="service-tile__img" src="/public/img/pond_waterfall.jpg" alt="waterfall"/>
+                        <div class="service-tile__text">Waterfalls</div>
+                    </div>
+                    <div class="service-tile">
+                        <img class="service-tile__img" src="/public/img/shrub.jpg" alt="waterfall"/>
+                        <div class="service-tile__text">Shrubs + Foliage</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock body %}
+    </main>
+    {% include './partials/footer.partial.twig' %}
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+</html>
