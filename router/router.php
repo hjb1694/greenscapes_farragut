@@ -22,6 +22,12 @@ function use_router($app) {
         return $view->render($response, 'about.page.twig');
     });
 
+    $app->get('/testimonials', function (Request $request, Response $response) {
+        $view = Twig::fromRequest($request);
+
+        return $view->render($response, 'testimonials.page.twig');
+    });
+
     $app->get('/contact', function (Request $request, Response $response) {
         $view = Twig::fromRequest($request);
 

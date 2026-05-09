@@ -1,0 +1,50 @@
+{% extends './partials/page.base.twig' %}
+{% block head %}
+    {% from './partials/head.macro.twig' import head_macro %}
+    {{ head_macro('Greenscapes Outdoor Living - Landscaping and More in Farragut, Tennessee', '') }}
+{% endblock head %}
+{% block body %}
+    <section class="testimonials-banner">
+        <h2 class="testimonials-banner__heading">We <em>thrive</em> on our clients' satisfaction!</h2>
+        <img src="/public/icons/trophy_icon.svg" class="testimonials-banner__icon" alt="Trophy Icon" />
+        <p class="testimonials-banner__brief">For over 25 years, we strived to provide service that exceeds our clients' expectations with common values in practice: Honesty, Integrity, Communication, and Dedication.</p>
+    </section>
+    <section class="testimonials-body">
+        <div class="testimonials-body__testimonials-tiles">
+            <div class="testimonial-tile">
+                <blockquote class="testimonial-tile__quote">GreenScapes Outdoor Living exceeded our expectations in creating a backyard oasis for our family. From the initial design to the meticulous execution, their team showcased unparalleled craftsmanship. Our new outdoor space has become the heart of our home, thanks to Greenscapes' dedication to excellence.</blockquote>
+                <p class="testimonial-tile__author">&mdash;Smith Family</p>
+            </div>
+            <div class="testimonial-tile">
+                <blockquote class="testimonial-tile__quote">As a property manager, I've worked with numerous construction teams, but Greenscapes stands out. Their professionalism, attention to detail, and adherence to timelines are truly commendable. Our commercial outdoor areas have been transformed, enhancing the overall appeal of our properties.</blockquote>
+                <p class="testimonial-tile__author">&mdash;Mr. Johnson, Commercial Client</p>
+            </div>
+            <div class="testimonial-tile">
+                <blockquote class="testimonial-tile__quote">I entrusted Greenscapes with transforming my backyard into a serene retreat, and they delivered beyond my imagination. The team's creativity, combined with their friendly approach, made the entire process enjoyable. Now, every moment spent in my outdoor haven feels like a getaway.</blockquote>
+                <p class="testimonial-tile__author">&mdash;Mrs. Davis</p>
+            </div>
+            <div class="testimonial-tile">
+                <blockquote class="testimonial-tile__quote">Having worked in the construction industry, I can truly appreciate Greenscapes' expertise. Their team seamlessly integrates design and functionality, creating outdoor spaces that are not only visually stunning but also structurally sound. A top-notch team committed to excellence.</blockquote>
+                <p class="testimonial-tile__author">&mdash;Mr. Rodriguez, Construction Professional</p>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+{% block scripts %}
+<script src="/public/js/uikit.min.js"></script>
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const headerPartRight = document.querySelector('.header__part--right');
+    const navClose = document.querySelector('.nav-close');
+
+    navToggle.addEventListener('click', () => {
+        headerPartRight.classList.add('show');
+    });
+
+    navClose.addEventListener('click', () => {
+        headerPartRight.classList.remove('show');
+    });
+
+    alert("This is only a demo!");
+</script>
+{% endblock scripts %}

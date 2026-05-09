@@ -19,6 +19,9 @@
 // Contact
 @use "./page/contact/contact-heading";
 @use "./page/contact/contact-area";
+//Testimonials
+@use "./page/testimonials/testimonials-banner";
+@use "./page/testimonials/testimonials-body";
 
 // ===== MISC =======
 @use "./keyframes";

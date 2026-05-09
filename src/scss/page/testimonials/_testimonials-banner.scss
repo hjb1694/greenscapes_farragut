@@ -1,0 +1,35 @@
+.testimonials-banner {
+    background: #333;
+    min-height: 30rem;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+
+    &__heading {
+        font-size: 2.8rem;
+        color: rgb(52, 175, 52);
+        text-align: center;
+
+        em {
+            color: #fbc92b;
+        }
+       
+    }
+
+    &__icon {
+        width: 16rem;
+        margin:2.6rem 0;
+        filter: drop-shadow(0 0 4rem rgba(0,0,0, 0.6))
+    }
+
+    &__brief {
+        max-width: 80rem;
+        font-size: 1.6rem;
+        line-height: 2.2;
+        color:#eee;
+        text-align: center;
+        font-weight: lighter;
+    }
+}
