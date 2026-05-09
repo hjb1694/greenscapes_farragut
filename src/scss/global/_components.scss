@@ -16,6 +16,10 @@
         width: 100%;
         border:none;
         outline: none;
+
+        &::placeholder {
+            color: #ccc;
+        }
     }
 
     &__textarea {
@@ -48,4 +52,49 @@
     &:hover {
         background: #022002;
     }
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    column-gap:.8rem;
+    cursor: pointer;
+
+    &__cb-input {
+        display:none;
+    }
+
+    &__box {
+        width: 4rem;
+        height: 4rem;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 .5rem rgba(0,0,0,.24);
+        position: relative;
+        flex-shrink: 0;
+
+        &::after {
+            content: url('/public/icons/checkbox_check.svg');
+            width: 3rem;
+            position: absolute;
+            left: .8rem;
+            top:.8rem;
+            display:none;
+        }
+    }
+
+    &__checkmark {
+        width: 3rem;
+        display:block;
+    }
+
+    &__label-text {
+        font-size: 1.4rem;
+    }
+}
+
+.checkbox-field__cb-input:checked + .checkbox-field__box::after {
+        display: block;
 }
