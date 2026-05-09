@@ -2,6 +2,11 @@
     background: #000;
     padding: 2rem;
 
+    .logo-link {
+        display:block;
+        text-decoration: none;
+    }
+
     &__container {
         max-width: 120rem;
         margin:0 auto;
@@ -34,7 +39,7 @@
         }
 
         &__item {
-            display: inline-block;
+            display: block;
 
             a,
             a:link,
@@ -45,7 +50,16 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 font-weight: lighter;
+                transition: color .3s;
+                display: block;
             }
+
+            a:hover,
+            a:visited:hover,
+            a:link:hover {
+                color: #aaa;
+            }
+
         }
     }
 
@@ -80,6 +94,58 @@
         width: 4rem;
     }
 
+
+
+}
+
+
+@media (max-width: 800px) {
+
+    .header__part {
+        &--right {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            top:0;
+            right:0;
+            width: 0;
+            height: 100vh;
+            z-index: 1000;
+            overflow: hidden;
+            transition: width .4s;
+
+            &.show {
+                width: 100vw;
+            }
+        }
+
+        &--right.show .nav-close {
+            display: block;
+            animation: fade-in .3s .2s both;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+
+        .nav {
+
+            &__list {
+                flex-direction: column;
+                row-gap: 2.6rem;
+            }
+
+            a,
+            a:link,
+            a:visited {
+                font-size: 2rem;
+                white-space: nowrap;
+            }
+
+        }
+    }
 
 
 }

@@ -1,0 +1,43 @@
+{% extends './partials/page.base.twig' %}
+{% block head %}
+    {% from './partials/head.macro.twig' import head_macro %}
+    {{ head_macro('Greenscapes Outdoor Living - Landscaping and More in Farragut, Tennessee', '') }}
+{% endblock head %}
+{% block body %}
+<section class="about-heading">
+    <div class="narrow-container about-heading__content">
+        <img class="about-heading__portrait" src="/public/img/portrait_placeholder.png" alt="portrait"/>
+        <div class="about-heading__text">
+            <h2>About Us</h2>
+            <h3>Mr. Eric Watts, Founder and Owner</h3>
+        </div>
+    </div>
+</section>
+<article class="about-content">
+    <div class="narrow-container">
+        <div class="about-content__text">
+            <p>
+                Welcome to GreenScapes Outdoor Living, where expertise meets excellence in outdoor transformations! With a remarkable 25-year journey in commercial and residential construction, we bring a wealth of experience spanning from labor to foreman, superintendent, sales, project management, and budgeting. At GreenScapes, we specialize in crafting unparalleled outdoor living spaces. Our comprehensive services cover every aspect, from Hardscapes to softscapes, including pavers, retaining walls, patios, decks, fences, ponds, waterfalls, outdoor lighting, staining/painting, tree and stump removal, and intricate landscape design – we’re your all-in-one solution for transforming outdoor spaces. Our commitment to quality, precision, and innovation sets GreenScapes apart. Trust us to turn your outdoor vision into a breathtaking reality. Discover the art of outdoor living with GreenScapes – where expertise meets your unique aspirations.
+            </p>
+        </div>
+    </div>
+</article>
+{% endblock body %}
+{% block scripts %}
+<script src="/public/js/uikit.min.js"></script>
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const headerPartRight = document.querySelector('.header__part--right');
+    const navClose = document.querySelector('.nav-close');
+
+    navToggle.addEventListener('click', () => {
+        headerPartRight.classList.add('show');
+    });
+
+    navClose.addEventListener('click', () => {
+        headerPartRight.classList.remove('show');
+    });
+
+    alert("This is only a demo!");
+</script>
+{% endblock scripts %}

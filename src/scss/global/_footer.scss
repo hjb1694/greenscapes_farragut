@@ -52,3 +52,34 @@
         font-weight: lighter;
     }
 }
+
+@media (max-width: 830px) {
+    .footer {
+
+        &__container {
+            flex-direction: column;
+            row-gap: 3rem;
+        }
+
+        &__logo {
+            height: 8rem;
+        }
+
+        &__legal {
+            order: 2;
+        }
+
+        &__contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1rem;
+        }
+
+        .contact-item {
+            margin:0;
+        }
+
+    }
+    
+}

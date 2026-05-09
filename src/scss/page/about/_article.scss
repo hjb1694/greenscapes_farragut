@@ -1,0 +1,24 @@
+.about-content {
+    padding: 2rem;
+    min-height: 60rem;
+    background: #ccc;
+    box-shadow: inset 0 0 6rem 2rem rgba(0,0,0,.24);
+
+    &__text {
+        padding-top: 15rem;
+    }
+
+    p {
+        line-height: 2.2;
+        font-size: 1.6rem;
+        color: #222;
+    }
+}
+
+@media (max-width: 777px) { 
+    .about-content {
+        &__text {
+            padding: 3rem 0;
+        }
+    }
+}

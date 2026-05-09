@@ -9,9 +9,11 @@
 // Home
 @use "./page/home/hero";
 @use "./page/home/services";
+// About
+@use "./page/about/heading";
+@use "./page/about/article";
 
 // ===== MISC =======
-@use "./media_queries";
 @use "./keyframes";
 
 

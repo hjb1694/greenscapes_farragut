@@ -20,7 +20,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "sass:build": "sass --style=compressed ./src/scss/main.scss ./public/css/style.build.css"
+    "sass:build": "sass --style=compressed ./src/scss/main.scss ./public/css/style.build.css",
+    "sass:watch": "sass --watch --style=compressed ./src/scss/main.scss ./public/css/style.build.css"
   },
   "devDependencies": {
     "sass": "^1.99.0"
