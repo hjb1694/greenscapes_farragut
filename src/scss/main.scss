@@ -1,17 +1,24 @@
 @use "./resets";
 @use "./base";
 
+// ===== UTIL ======
+@use "./util/util";
+
 // ==== GLOBAL =====
 @use "./global/header";
 @use "./global/footer";
+@use "./global/components";
 
 // ==== PAGE-SPECIFIC ======
 // Home
 @use "./page/home/hero";
 @use "./page/home/services";
 // About
-@use "./page/about/heading";
-@use "./page/about/article";
+@use "./page/about/about-heading";
+@use "./page/about/about-article";
+// Contact
+@use "./page/contact/contact-heading";
+@use "./page/contact/contact-area";
 
 // ===== MISC =======
 @use "./keyframes";

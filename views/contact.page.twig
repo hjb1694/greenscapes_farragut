@@ -1,0 +1,68 @@
+{% extends './partials/page.base.twig' %}
+{% block head %}
+    {% from './partials/head.macro.twig' import head_macro %}
+    {{ head_macro('Greenscapes Outdoor Living - Landscaping and More in Farragut, Tennessee', '') }}
+{% endblock head %}
+{% block body %}
+<section class="contact-heading">
+    <h2>Contact Us</h2>
+</section>
+<section class="contact-area">
+    <div class="narrow-container">
+        <form>
+            <div class="form-group">
+                <div class="text-field">
+                    <label class="text-field__label">First Name</label>
+                    <input class="text-field__input" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-field">
+                    <label class="text-field__label">Last Name</label>
+                    <input class="text-field__input" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-field">
+                    <label class="text-field__label">Email</label>
+                    <input class="text-field__input" type="email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-field">
+                    <label class="text-field__label">Phone (Optional)</label>
+                    <input class="text-field__input" type="tel" inputmode="numeric" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="text-field">
+                    <label class="text-field__label">Message</label>
+                    <textarea class="text-field__textarea"></textarea>
+                </div>
+            </div>
+            <button class="subbut">
+                <span>submit</span>
+                <img src="/public/icons/send_icon.svg" alt="send icon" />
+            </button>
+        </form>
+    </div>
+</section>
+{% endblock body %}
+{% block scripts %}
+<script src="/public/js/uikit.min.js"></script>
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const headerPartRight = document.querySelector('.header__part--right');
+    const navClose = document.querySelector('.nav-close');
+
+    navToggle.addEventListener('click', () => {
+        headerPartRight.classList.add('show');
+    });
+
+    navClose.addEventListener('click', () => {
+        headerPartRight.classList.remove('show');
+    });
+
+    alert("This is only a demo!");
+</script>
+{% endblock scripts %}
