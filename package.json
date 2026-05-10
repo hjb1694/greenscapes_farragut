@@ -22,7 +22,8 @@
   "scripts": {
     "sass:build": "sass --style=compressed ./src/scss/main.scss ./public/css/style.build.css",
     "sass:watch": "sass --watch --style=compressed ./src/scss/main.scss ./public/css/style.build.css",
-    "terser:build:header": "terser ./src/js/header.js -c --output ./public/js/header.min.js"
+    "terser:build:header": "terser ./src/js/header.js -c --output ./public/js/header.min.js",
+    "terser:build:contact": "terser ./src/js/process_contact.js -c --output ./public/js/process_contact.min.js"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
