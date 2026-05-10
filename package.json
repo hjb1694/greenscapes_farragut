@@ -21,9 +21,12 @@
   "main": "index.js",
   "scripts": {
     "sass:build": "sass --style=compressed ./src/scss/main.scss ./public/css/style.build.css",
-    "sass:watch": "sass --watch --style=compressed ./src/scss/main.scss ./public/css/style.build.css"
+    "sass:watch": "sass --watch --style=compressed ./src/scss/main.scss ./public/css/style.build.css",
+    "terser:build:header": "terser ./src/js/header.js -c --output ./public/js/header.min.js"
   },
   "devDependencies": {
-    "sass": "^1.99.0"
+    "concurrently": "^9.2.1",
+    "sass": "^1.99.0",
+    "terser": "^5.47.1"
   }
 }

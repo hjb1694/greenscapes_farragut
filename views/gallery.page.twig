@@ -1,0 +1,49 @@
+{% extends './partials/page.base.twig' %}
+{% block head %}
+    {% from './partials/head.macro.twig' import head_macro %}
+    {{ head_macro('Greenscapes Outdoor Living - About Us', '') }}
+    <link rel="stylesheet" href="/public/css/aos-master/aos.css" />
+{% endblock head %}
+{% block body %}
+<section class="gallery-heading">
+    <h2>Portfolio</h2>
+</section>
+<section class="gallery-body">
+    <div class="gallery-content">
+        
+            <div class="gallery-image-container gal-img--1" data-aos="zoom-in">
+                <img class="gallery-image" src="/public/img/gallery_img_1.png" alt="Image 1"/>
+            </div>
+      
+            <div class="gallery-image-container gal-img--2" data-aos="zoom-in" data-aos-delay="150">
+                <img class="gallery-image" src="/public/img/gallery_img_2.png" alt="Image 2"/>
+            </div>
+       
+            <div class="gallery-image-container gal-img--3" data-aos="zoom-in" data-aos-delay="150">
+                <img class="gallery-image" src="/public/img/gallery_img_3.png" alt="Image 3"/>
+            </div>
+
+            <div class="gallery-image-container gal-img--4" data-aos="zoom-in">
+                <img class="gallery-image" src="/public/img/gallery_img_4.jpg" alt="Image 4"/>
+            </div>
+
+            <div class="gallery-image-container gal-img--5" data-aos="zoom-in" data-aos-delay="150">
+                <img class="gallery-image" src="/public/img/gallery_img_5.png" alt="Image 5"/>
+            </div>
+
+            <div class="gallery-image-container gal-img--6" data-aos="zoom-in">
+                <img class="gallery-image" src="/public/img/gallery_img_6.jpg" alt="Image 6"/>
+            </div>
+
+            <div class="gallery-image-container gal-img--7" data-aos="zoom-in" data-aos-delay="150">
+                <img class="gallery-image" src="/public/img/gallery_img_7.jpg" alt="Image 7"/>
+            </div>
+     
+    </div>
+</section>
+{% endblock body %}
+{% block scripts %}
+<script src="/public/js/aos-master/aos.js"></script>
+<script src="/public/js/uikit.min.js"></script>
+<script>AOS.init();</script>
+{% endblock scripts %}

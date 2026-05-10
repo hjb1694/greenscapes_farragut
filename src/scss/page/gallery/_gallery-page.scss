@@ -1,0 +1,148 @@
+.gallery-heading {
+    background: #151515;
+    min-height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding:4rem;
+    
+
+    h2 {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: lighter;
+    }
+}
+
+.gallery-body {
+    background: #151515;
+    padding: 0 2rem 4rem 2rem;
+}
+
+.gallery-content {
+    column-count: 3;
+    column-gap: 2rem;
+    max-width: 120rem;
+    margin:0 auto;
+
+}
+
+.gallery-image-container {
+    overflow: hidden;
+    box-shadow: 0 0 1rem rgba(0,0,0,.24);
+    margin-bottom: 2rem;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s;
+
+    &:hover {
+        transform: scale(1.03);
+        filter: grayscale(100%);
+    }
+}
+
+.gal-img {
+    &--1 {
+        height:50rem;
+    }
+    &--2 {
+        height:39rem;
+    }
+    &--3 {
+        height:32rem;
+    }
+    &--6 {
+        height: 25rem;
+    }
+    &--7 {
+        height: 32.5rem;
+    }
+}
+
+
+@media (max-width: 1247px) {
+    .gallery-content {
+        column-count: 2;
+        max-width: 80rem;
+    }
+
+    .gal-img {
+        &--1 {
+            height:40rem;
+        }
+        &--2 {
+            height:50rem;
+        }
+        &--3 {
+            height:55.8rem;
+        }
+        &--6 {
+            height: 25rem;
+        }
+        &--7 {
+            height: 32.5rem;
+        }
+    }
+}
+
+@media(max-width: 845px) {
+    .gallery-content {
+        max-width: 60rem;
+    }
+
+    .gal-img {
+        &--1 {
+            height:30rem;
+        }
+        &--2 {
+            height:50rem;
+        }
+        &--3 {
+            height:40rem;
+        }
+        &--6 {
+            height: 25rem;
+        }
+        &--7 {
+            height: 29rem;
+        }
+    }
+}
+
+@media (max-width: 648px) {
+
+    .gallery-content {
+        column-count: 1;
+    }
+
+    .gal-img {
+        &--1 {
+            height:35rem;
+        }
+        &--2 {
+            height:35rem;
+        }
+        &--3 {
+            height:35rem;
+        }
+        &--4 {
+            height:35rem;
+        }
+        &--5{
+            height:35rem;
+        }
+        &--6 {
+            height:35rem;
+        }
+        &--7 {
+            height:35rem;
+        }
+    }
+
+}
+

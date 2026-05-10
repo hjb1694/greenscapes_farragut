@@ -2,6 +2,7 @@
 {% block head %}
     {% from './partials/head.macro.twig' import head_macro %}
     {{ head_macro('Greenscapes Outdoor Living - Landscaping and More in Farragut, Tennessee', '') }}
+    <link rel="stylesheet" href="/public/css/aos-master/aos.css" />
 {% endblock head %}
 {% block body %}
     <section class="testimonials-banner">
@@ -11,27 +12,27 @@
     </section>
     <section class="testimonials-body">
         <div class="testimonials-body__testimonials-tiles">
-            <div class="testimonial-tile">
+            <div class="testimonial-tile" data-aos="zoom-in">
                 <blockquote class="testimonial-tile__quote">GreenScapes Outdoor Living exceeded our expectations in creating a backyard oasis for our family. From the initial design to the meticulous execution, their team showcased unparalleled craftsmanship. Our new outdoor space has become the heart of our home, thanks to Greenscapes' dedication to excellence.</blockquote>
                 <p class="testimonial-tile__author">&mdash;Smith Family</p>
             </div>
-            <div class="testimonial-tile">
+            <div class="testimonial-tile" data-aos="zoom-in" data-aos-delay="150">
                 <blockquote class="testimonial-tile__quote">As a property manager, I've worked with numerous construction teams, but Greenscapes stands out. Their professionalism, attention to detail, and adherence to timelines are truly commendable. Our commercial outdoor areas have been transformed, enhancing the overall appeal of our properties.</blockquote>
                 <p class="testimonial-tile__author">&mdash;Mr. Johnson, Commercial Client</p>
             </div>
-            <div class="testimonial-tile">
+            <div class="testimonial-tile" data-aos="zoom-in" data-aos-delay="150">
                 <blockquote class="testimonial-tile__quote">I entrusted Greenscapes with transforming my backyard into a serene retreat, and they delivered beyond my imagination. The team's creativity, combined with their friendly approach, made the entire process enjoyable. Now, every moment spent in my outdoor haven feels like a getaway.</blockquote>
                 <p class="testimonial-tile__author">&mdash;Mrs. Davis</p>
             </div>
-            <div class="testimonial-tile">
+            <div class="testimonial-tile" data-aos="zoom-in">
                 <blockquote class="testimonial-tile__quote">Having worked in the construction industry, I can truly appreciate Greenscapes' expertise. Their team seamlessly integrates design and functionality, creating outdoor spaces that are not only visually stunning but also structurally sound. A top-notch team committed to excellence.</blockquote>
                 <p class="testimonial-tile__author">&mdash;Mr. Rodriguez, Construction Professional</p>
             </div>
-            <div class="testimonial-tile">
+            <div class="testimonial-tile" data-aos="zoom-in" data-aos-delay="150">
                 <blockquote class="testimonial-tile__quote">Greenscapes turned our dream patio into reality! The team's collaborative approach and ability to capture our vision were impressive. They navigated every challenge with ease, ensuring the project was completed on time. Our family now enjoys countless evenings under the stars in our beautifully crafted outdoor space.</blockquote>
                 <p class="testimonial-tile__author">&mdash;Martinez Family</p>
             </div>
-            <div class="testimonial-tile">
+            <div class="testimonial-tile" data-aos="zoom-in">
                 <blockquote class="testimonial-tile__quote">Managing multiple projects demands a reliable and skilled team. Greenscapes Outdoor Living has consistently delivered exceptional results, making them my go-to choice for outdoor transformations. Their commitment to quality and professionalism sets them apart in the industry.</blockquote>
                 <p class="testimonial-tile__author">&mdash;Ms. Thompson, Project Manager</p>
             </div>
@@ -40,19 +41,6 @@
 {% endblock body %}
 {% block scripts %}
 <script src="/public/js/uikit.min.js"></script>
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const headerPartRight = document.querySelector('.header__part--right');
-    const navClose = document.querySelector('.nav-close');
-
-    navToggle.addEventListener('click', () => {
-        headerPartRight.classList.add('show');
-    });
-
-    navClose.addEventListener('click', () => {
-        headerPartRight.classList.remove('show');
-    });
-
-    alert("This is only a demo!");
-</script>
+<script src="/public/js/aos-master/aos.js"></script>
+<script>AOS.init();</script>
 {% endblock scripts %}
