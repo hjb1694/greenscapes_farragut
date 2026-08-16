@@ -24,7 +24,7 @@ const validate = fields => {
 
 }
 
-const submitForm = evt => {
+const submitForm = async evt => {
     evt.preventDefault();
 
     const fields = {
