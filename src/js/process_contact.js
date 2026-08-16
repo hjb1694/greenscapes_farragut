@@ -1,5 +1,6 @@
 const contactForm = document.querySelector('#contact-form');
 const errbox = document.querySelector('.errbox');
+const contactSuccessToast = document.querySelector('.contact-success-toast');
 
 const validate = fields => {
     const errors = [];
@@ -65,7 +66,18 @@ const submitForm = async evt => {
         if(!response.ok){
             throw new Error();
         }
-    
+
+        fields.firstName.value = '';
+        fields.lastName.value = '';
+        fields.email.value = '';
+        fields.phone.canText.checked = false;
+        fields.message.value = '';
+
+        contactSuccessToast.classList.add('show');
+        
+        setTimeout(() => {
+            contactSuccessToast.classList.remove('show');
+        }, 3000);
 
     }
     catch(err){
