@@ -40,9 +40,39 @@ const submitForm = evt => {
         return;
     }
 
-    try{}
+    try{
+
+        const fd = new FormData();
+        fd.append('first_name', fields.firstName.value.trim());
+        fd.append('last_name', fields.lastName.value.trim());
+        fd.append('email', fields.email.value.trim());
+        fd.append('message', fields.message.value.trim());
+
+        if(fields.phone.value.trim()){
+            fd.append('phone', fields.phone.value);
+            fd.append('can_text', +fields.canText.checked);
+        }
+
+        const response = await fetch('/contact', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: fd
+        });
+
+        if(!response.ok){
+            throw new Error();
+        }
+    
+
+    }
     catch(err){
         console.error(err);
+        errbox.innerHTML = '';
+        errbox.insertAdjacentHTML('beforeend', '<li><img src="/public/icons/error_circle_icon.svg" alt="error icon" /><span>An error has occurred.</span></li>');
+        errbox.classList.add('show');
     }
 }
 
