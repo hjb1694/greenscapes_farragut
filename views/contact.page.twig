@@ -4,6 +4,9 @@
     {{ head_macro('Greenscapes Outdoor Living - Contact Us', '') }}
 {% endblock head %}
 {% block body %}
+<div class="contact-success-toast">
+    Your message has been successfully submitted!
+</div>
 <section class="contact-heading">
     <h2>Contact Us</h2>
 </section>
@@ -67,6 +70,7 @@
     const phoneInput = document.querySelector('#phone');
     const textOption = document.querySelector('.text-option');
     const textOptionCb = document.querySelector('#can-text');
+    const contactForm = document.querySelector('#contact-form');
 
     const phoneMaskOptions = {
         mask: '(000) 000-0000'
@@ -82,5 +86,6 @@
             textOption.classList.remove('show');
         }
     });
+    
 </script>
 {% endblock scripts %}

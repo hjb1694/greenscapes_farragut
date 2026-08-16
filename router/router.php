@@ -42,6 +42,7 @@ function use_router($app) {
 
     $app->post('/contact', function (Request $request, Response $response) {
 
+        $validationErrors = [];
 
         try{
 
@@ -59,12 +60,41 @@ function use_router($app) {
             }
 
         }catch(Exception $e){
+            $code;
+            $payload;
+            if($e->getMessage()){
+                switch($e->getMessage()){
+                    case "INVALID_REQUEST":
+                        $code = 403;
+                        $payload = ["error" => "INVALID_REQUEST"];
+                        break;
+                    case "FIELD_NOT_SET":
+                        $code = 422;
+                        $payload = ["error" => "MISSING_FIELD"];
+                        break;
+                    case "VALIDATION_ERRORS":
+                        $code = 422;
+                        $payload = ["error" => "VALIDATION_ERRORS", "details" => $validationErrors];
+                        break;
+                    case "FALSE_CAPTCHA":
+                        $code = 422;
+                        $payload = ["Error" => "FALSE_CAPTCHA", "details" => "Captcha Validation Failed."];
+                        break;
+                    default:
+                        $code = 500;
+                        $payload = ["error" => "SERVER_ERROR"];
+                }
+            }else{
+                $code = 500;
+                $payload = ["error" => "SERVER_ERROR"];
+            }
+
+            $response->getBody()->write(json_encode($payload));
+            return $response->withHeader('Content-Type', 'application/json')->withStatus($code);
 
         }
-
+    
     });
-
-
 
 }
 

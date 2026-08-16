@@ -40,7 +40,10 @@ const submitForm = evt => {
         return;
     }
 
-    alert('success!');
+    try{}
+    catch(err){
+        console.error(err);
+    }
 }
 
 contactForm.addEventListener('submit', submitForm);
