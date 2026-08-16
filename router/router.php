@@ -59,6 +59,71 @@ function use_router($app) {
                 }
             }
 
+            $firstName = $body['first_name'];
+            $lastName = $body['last_name'];
+            $email = $body['email'];
+            $message = $body['message'];
+            $phone = NULL;
+            $canText = 0;
+
+            if(grapheme_strlen($firstName) < 2 || grapheme_strlen($firstName) > 50){
+                array_push($validationErrors, 'Invalid First Name');
+            }
+
+            if(grapheme_strlen($lastName) < 2 || grapheme_strlen($lastName) > 50){
+                array_push($validationErrors, 'Invalid Last Name');
+            }
+
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 150){
+                array_push($validationErrors, 'Invalid Email');
+            }
+
+            if(grapheme_strlen($message) < 10 || grapheme_strlen($message) > 1000){
+                array_push($validationErrors, 'Invalid Message body');
+            }
+
+            if(isset($body['phone'])){
+
+                $phone = $body['phone'];
+                $canText = $body['can_text'];
+
+                if(!preg_match('/^\([0-9]{3}\) [0-9]{3}\-[0-9]{4}$/', $phone)){
+                    array_push($validationErrors, 'Invalid Phone Number');
+                }
+
+                if($canText != 1 || $canText != 0){
+                    array_push($validationErrors, 'Invalid Cantext Value');
+                }
+
+            }
+
+            if(count($validationErrors)){
+                throw new Exception('VALIDATION_ERRORS');
+            }
+
+            function sanitize($value) {
+                return trim(htmlspecialchars($value));
+            }
+
+            $SAFE_firstName = sanitize($firstName);
+            $SAFE_lastName = sanitize($lastName);
+            $SAFE_email = sanitize($email);
+            $SAFE_message = sanitize($message);
+            $SAFE_phone = $phone;
+            $SAFE_canText = $canText;
+            
+
+            $conn = createDBInstance();
+
+            $stmt = $conn->prepare("INSERT INTO contact_inquiries (first_name, last_name, phone, can_text, email, message_body) VALUES (?,?,?,?,?,?)");
+            $stmt->bind_param('sssiss', $SAFE_firstName, $SAFE_lastName, $SAFE_phone, $SAFE_canText, $SAFE_email, $SAFE_message);
+            $stmt->execute();
+            $stmt->close();
+            $conn->close();
+
+            return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
+
+
         }catch(Exception $e){
             $code;
             $payload;

@@ -9,5 +9,3 @@ navToggle.addEventListener('click', () => {
 navClose.addEventListener('click', () => {
     headerPartRight.classList.remove('show');
 });
-
-alert("This is only a demo!");
