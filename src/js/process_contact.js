@@ -54,12 +54,16 @@ const submitForm = async evt => {
             fd.append('can_text', +fields.canText.checked);
         }
 
+        console.log('first name: ', fields.firstName.value);
+        console.log('last name: ', fields.lastName.value);
+        console.log('email: ', fields.email.value);
+        console.log('message: ', fields.message.value);
+        console.log('phone: ', fields.phone.value);
+        console.log('can text: ', +fields.canText.checked);
+
         const response = await fetch('/contact', {
             method: 'POST',
             mode: 'no-cors',
-            headers: {
-                'Accept': 'application/json'
-            },
             body: fd
         });
 
@@ -70,13 +74,13 @@ const submitForm = async evt => {
         fields.firstName.value = '';
         fields.lastName.value = '';
         fields.email.value = '';
-        fields.phone.canText.checked = false;
+        fields.canText.checked = false;
         fields.message.value = '';
 
-        contactSuccessToast.classList.add('show');
+        contactSuccessToast.classList.add('render');
         
         setTimeout(() => {
-            contactSuccessToast.classList.remove('show');
+            contactSuccessToast.classList.remove('render');
         }, 3000);
 
     }

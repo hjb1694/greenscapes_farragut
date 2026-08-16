@@ -48,16 +48,15 @@ function use_router($app) {
 
             $body = $request->getParsedBody();
 
-            $requiredFields = ['first_name','last_name','email','message'];
-
-            foreach($requiredFields as $field){
-                foreach($body as $key => $value){
-                    if(!in_array($requiredFields, $key)){
-                        throw new Exception('Field not set');
-                        break 2;
-                    }
-                }
+            if(
+                !isset($body['first_name']) ||
+                !isset($body['last_name']) ||
+                !isset($body['email']) ||
+                !isset($body['message'])
+            ){
+                throw new Exception('FIELD_NOT_SET');
             }
+            
 
             $firstName = $body['first_name'];
             $lastName = $body['last_name'];
@@ -91,8 +90,10 @@ function use_router($app) {
                     array_push($validationErrors, 'Invalid Phone Number');
                 }
 
-                if($canText != 1 || $canText != 0){
-                    array_push($validationErrors, 'Invalid Cantext Value');
+                $canTextValues = [0,1];
+
+                if(!in_array($canText, $canTextValues)){
+                    array_push($validationErrors, 'Invalid CanText Value');
                 }
 
             }
