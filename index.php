@@ -15,6 +15,7 @@ $dotenv = DotEnv::createImmutable(__DIR__);
 $dotenv->load();
 
 require __DIR__ . '/router/router.php';
+require __DIR__ . '/db/dbo.php';
 
 $app = AppFactory::create();
 
