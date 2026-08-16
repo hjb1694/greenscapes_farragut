@@ -40,6 +40,12 @@ function use_router($app) {
         return $view->render($response, 'contact.page.twig');
     });
 
+    $app->post('/contact', function (Request $request, Response $response) {
+
+        
+
+    });
+
 
 
 }
