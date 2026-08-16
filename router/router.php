@@ -42,7 +42,25 @@ function use_router($app) {
 
     $app->post('/contact', function (Request $request, Response $response) {
 
-        
+
+        try{
+
+            $body = $request->getParsedBody();
+
+            $requiredFields = ['first_name','last_name','email','message'];
+
+            foreach($requiredFields as $field){
+                foreach($body as $key => $value){
+                    if(!in_array($requiredFields, $key)){
+                        throw new Exception('Field not set');
+                        break;
+                    }
+                }
+            }
+
+        }catch(Exception $e){
+
+        }
 
     });
 
