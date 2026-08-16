@@ -53,7 +53,7 @@ function use_router($app) {
                 foreach($body as $key => $value){
                     if(!in_array($requiredFields, $key)){
                         throw new Exception('Field not set');
-                        break;
+                        break 2;
                     }
                 }
             }
