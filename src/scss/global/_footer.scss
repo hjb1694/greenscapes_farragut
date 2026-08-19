@@ -27,6 +27,7 @@
         h3 {
             font-size: 2rem;
             font-weight: normal;
+            user-select: none;
         }
     }
 
@@ -50,6 +51,16 @@
         margin: 1rem 0;
         font-size: 1.4rem;
         font-weight: lighter;
+    }
+
+    &__author-link,
+    &__author-link:link,
+    &__author-link:visited,
+    &__mailto,
+    &__mailto:link,
+    &__mailto:visited {
+        color: #ccc;
+        text-decoration: none;
     }
 }
 
