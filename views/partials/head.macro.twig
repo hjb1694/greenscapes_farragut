@@ -1,7 +1,8 @@
-{% macro head_macro(title, ogUrlPath) %}
+{% macro head_macro(title, ogUrlPath, description) %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ description }}" />
     <title>{{ title }}</title>
     <meta property="og:site_name" content="GreenScapes Outdoor Living" />
     <meta property="og:title" content="{{ title }}" />
@@ -14,6 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href="https://greenscapestellicovillage.com/{{ ogUrlPath }}" />
-    <link rel="stylesheet" href="/public/css/style.build.css?v=8" />
+    <link rel="stylesheet" href="/public/css/style.build.css?v=9" />
 </head>
 {% endmacro %}
